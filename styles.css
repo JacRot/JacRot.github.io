@@ -1,94 +1,220 @@
-/* ===========================
-   styles.css
-   =========================== */
-/* --- Background and Font --- */
+/* ============================================================
+   BASE / RESET
+   Remove default margin and padding from body
+   ============================================================ */
 body {
-    background: linear-gradient(135deg, #e8f0fe, #f0f4ff);
-    font-family: Arial, Helvetica, sans-serif;
-    font-size: 16px;
-    color: #222;
-    margin: 0;
-    padding: 0;
+  margin: 0;
+  padding: 0;
+  background-color: #f2f2f2; /* Light gray page background */
+  font-family: Arial, sans-serif;
 }
-/* --- Header --- */
+
+/* ============================================================
+   HEADER
+   ============================================================ */
 header {
-    text-align: center;
-    font-size: 2rem;
-    font-weight: bold;
-    padding: 30px 20px;
-    background-color: #1a3a6b;
-    color: #ffffff;
+  background-color: #222;
+  color: #fff;
+  padding: 16px 20px;
+  text-align: center;
 }
-header h1 {
-    margin: 0;
-    font-size: 2.2rem;
-    font-weight: 700;
+
+/* ============================================================
+   NAVIGATION MENU — Flexbox (horizontal, centered)
+   display, flex-direction, and gap set here
+   ============================================================ */
+nav {
+  background-color: #333;
 }
-header p {
-    font-size: 1rem;
-    font-weight: 400;
-    margin: 8px 0 0;
-}
-/* --- Navigation Menu --- */
+
 nav ul {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-    display: flex;
-    flex-wrap: wrap;
-    background-color: #254e8c;
-    justify-content: center;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  gap: 10px;
 }
+
 nav ul li {
-    margin: 0;
+  margin: 0 15px;
 }
+
 nav ul li a {
-    display: block;
-    padding: 14px 20px;
-    color: #e8f0fe;
-    text-decoration: none;
-    font-size: 0.95rem;
-    transition: background-color 0.3s, color 0.3s;
+  color: #ffffff;
+  background-color: #333;
+  padding: 12px 20px;
+  text-decoration: none;
+  display: block;
+  border-radius: 4px;
+  transition: background-color 0.3s;
 }
-/* Hover effect with transition */
+
 nav ul li a:hover {
-    background-color: #f0c040;
-    color: #1a3a6b;
-    transition: background-color 0.3s, color 0.3s;
+  background-color: #555;
 }
-/* --- Main Sections --- */
+
+/* ============================================================
+   MAIN CONTENT AREA — Flexbox (vertical stack of sections)
+   display, flex-direction, and gap set here
+   ============================================================ */
 main {
-    padding: 20px;
-    max-width: 1100px;
-    margin: 0 auto;
+  max-width: 960px;
+  margin: 20px auto;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
 }
+
+/* ============================================================
+   SECTIONS — White content blocks with shadow
+   ============================================================ */
 section {
-    padding: 30px 25px;
-    margin: 25px 0;
-    background-color: #ffffff;
-    border: 1px solid #d0d8f0;
-    border-radius: 8px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
-    transition: transform 0.3s ease;
+  padding: 20px;
+  background-color: #ffffff;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
-/* Zoom in on hover */
-section:hover {
-    transform: scale(1.02);
-}
-section h2 {
-    font-size: 1.5rem;
-    color: #1a3a6b;
-    margin-top: 0;
-    border-bottom: 2px solid #d0d8f0;
-    padding-bottom: 10px;
-}
-/* --- Table Styling --- */
+
+/* ============================================================
+   PRODUCT TABLE
+   ============================================================ */
 table {
-    width: 100%;
-    border-collapse: collapse;
-    margin-top: 20px;
-    font-size: 0.95rem;
+  width: 100%;
+  border-collapse: collapse;
 }
+
 table caption {
-    font-size: 1.1rem;
-    font-w
+  font-size: 1.2em;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+col.col-shaded {
+  background-color: #f9f9f9;
+}
+
+th,
+td {
+  border: 1px solid #ccc;
+  padding: 12px;
+  text-align: left;
+}
+
+thead tr {
+  background-color: #444;
+  color: #ffffff;
+}
+
+tfoot tr {
+  font-style: italic;
+  border-top: 2px solid #ccc;
+}
+
+tfoot td {
+  text-align: center;
+}
+
+/* ============================================================
+   CONTACT FORM — Flexbox (column layout)
+   display, flex-direction, and gap set here
+   ============================================================ */
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  max-width: 600px;
+}
+
+.contact-form label {
+  font-weight: bold;
+  font-size: 0.95em;
+}
+
+.required-mark {
+  color: #c0392b;
+  margin-left: 2px;
+}
+
+.contact-form input[type="text"],
+.contact-form input[type="email"],
+.contact-form textarea {
+  padding: 10px 12px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 1em;
+  font-family: Arial, sans-serif;
+  outline: none;
+  transition: border-color 0.3s ease;
+}
+
+.contact-form input[type="text"]:hover,
+.contact-form input[type="email"]:hover,
+.contact-form textarea:hover {
+  border-color: #888;
+}
+
+.contact-form input[type="text"]:focus,
+.contact-form input[type="email"]:focus,
+.contact-form textarea:focus {
+  border-color: #0066cc;
+}
+
+.contact-form input[type="submit"] {
+  padding: 12px 24px;
+  background-color: #333;
+  color: #ffffff;
+  border: none;
+  border-radius: 4px;
+  font-size: 1em;
+  cursor: pointer;
+  align-self: flex-start;
+  transition: background-color 0.3s ease;
+}
+
+.contact-form input[type="submit"]:hover {
+  background-color: #555;
+}
+
+/* ============================================================
+   RESPONSIVE DESIGN — Media Queries
+   Breakpoints: phone (<480px), tablet (480-768px), desktop (>768px)
+   ============================================================ */
+
+/* Phone: minimum width 320px */
+@media (min-width: 320px) {
+  main {
+    margin: 10px;
+  }
+
+  nav ul {
+    flex-wrap: wrap;
+    gap: 4px;
+  }
+
+  .contact-form {
+    max-width: 100%;
+  }
+}
+
+/* Tablet: minimum width 480px */
+@media (min-width: 480px) {
+  main {
+    margin: 15px auto;
+  }
+
+  .contact-form {
+    max-width: 100%;
+  }
+}
+
+/* Desktop: minimum width 768px */
+@media (min-width: 768px) {
+  main {
+    margin: 20px auto;
+  }
+
+  .contact-form {
+    max-width: 600px;
+  }
+}
