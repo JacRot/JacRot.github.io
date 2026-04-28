@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Storefront</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <header>
+    <h1>Student ID: JRothgeb &mdash; Jackson's Tech Shop</h1>
+  </header>
+
+  <nav>
+    <ul>
+      <li><a href="#home">Home</a></li>
+      <li><a href="#products">Products</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
+
+  <!-- Main content area uses Flexbox (column direction) to stack sections -->
+  <main>
+
+    <!-- Home section -->
+    <section id="home">
+      <h2>Welcome to Jackson's Tech Shop</h2>
+      <p>Your one-stop shop for quality tech accessories and peripherals.</p>
+    </section>
+
+    <!-- Products section with inventory table -->
+    <section id="products">
+      <h2>Our Product Listing</h2>
+
+      <table>
+        <caption>Store Inventory</caption>
+        <colgroup>
+          <col class="col-shaded">
+          <col>
+          <col class="col-shaded">
+          <col>
+        </colgroup>
+        <thead>
+          <tr>
+            <th>Product Name</th>
+            <th>Price</th>
+            <th>Category</th>
+            <th>Availability</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Mechanical Keyboard</td>
+            <td>$89.99</td>
+            <td>Peripherals</td>
+            <td>In Stock</td>
+          </tr>
+          <tr>
+            <td>Wireless Mouse</td>
+            <td>$34.99</td>
+            <td>Peripherals</td>
+            <td>In Stock</td>
+          </tr>
+          <tr>
+            <td>USB-C Hub</td>
+            <td>$49.99</td>
+            <td>Accessories</td>
+            <td>Out of Stock</td>
+          </tr>
+        </tbody>
+        <tfoot>
+          <tr>
+            <td colspan="4">Prices subject to change. Contact us for bulk orders.</td>
+          </tr>
+        </tfoot>
+      </table>
+    </section>
+
+    <!-- Contact section with accessible form (Flexbox column layout) -->
+    <section id="contact">
+      <h2>Contact Us</h2>
+
+      <form class="contact-form" action="#" method="post">
+
+        <!-- Sender name field (required) -->
+        <label for="sender-name">Name <span class="required-mark">*</span></label>
+        <input type="text" id="sender-name" name="sender-name" placeholder="Your full name" required>
+
+        <!-- Email address field (required) -->
+        <label for="email">Email <span class="required-mark">*</span></label>
+        <input type="email" id="email" name="email" placeholder="you@example.com" required>
+
+        <!-- Subject field -->
+        <label for="subject">Subject</label>
+        <input type="text" id="subject" name="subject" placeholder="Message subject">
+
+        <!-- Message textarea -->
+        <label for="message">Message</label>
+        <textarea id="message" name="message" rows="5" placeholder="Write your message here..."></textarea>
+
+        <!-- Submit button -->
+        <input type="submit" value="Send Message">
+
+      </form>
+    </section>
+
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Jackson's Tech Shop. All rights reserved.</p>
+  </footer>
+
+</body>
+</html>
